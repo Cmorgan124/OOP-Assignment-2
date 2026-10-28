@@ -1,4 +1,6 @@
-package classes;
+package classes.request;
+
+import classes.Technician;
 
 public interface SupportRequest {
 	int getId();

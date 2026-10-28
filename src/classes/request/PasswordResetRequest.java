@@ -1,4 +1,4 @@
-package classes;
+package classes.request;
 
 public class PasswordResetRequest extends AbstractSupportRequest{
 	private String accountName;

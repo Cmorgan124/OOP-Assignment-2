@@ -1,4 +1,4 @@
-package classes;
+package classes.request;
 
 public class NetworkIssueRequest extends AbstractSupportRequest{
 	private int affectedUsers;

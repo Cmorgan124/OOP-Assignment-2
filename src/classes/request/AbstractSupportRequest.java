@@ -1,4 +1,4 @@
-package classes;
+package classes.request;
 
 public abstract class AbstractSupportRequest implements SupportRequest {
 	private final int id;

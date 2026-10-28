@@ -1,4 +1,4 @@
-package classes;
+package classes.request;
 
 public class DeviceSetupRequest extends AbstractSupportRequest{
 	private int deviceCount;
