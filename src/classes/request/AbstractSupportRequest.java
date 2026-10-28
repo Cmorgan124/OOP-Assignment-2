@@ -1,4 +1,5 @@
 package classes.request;
+import classes.Technician;
 
 public abstract class AbstractSupportRequest implements SupportRequest {
 	private final int id;
@@ -22,6 +23,13 @@ public abstract class AbstractSupportRequest implements SupportRequest {
 	protected void markResolved() {
 		if (isResolved()) throw new IllegalStateException("Invalid operation; request has already been resolved");
 		resolved = true;
+	}
+	
+	@Override
+    public int resolveFor(Technician technician) {
+		markResolved();
+		technician.addPoints(calculatePoints());
+		return calculatePoints();
 	}
 	
 	// Common getters
