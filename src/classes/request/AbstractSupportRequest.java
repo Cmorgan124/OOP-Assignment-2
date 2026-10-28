@@ -5,6 +5,7 @@ public abstract class AbstractSupportRequest implements SupportRequest {
 	private final String title;
 	private final int basePoints;
 	private boolean resolved;
+	protected abstract int calculatePoints();
 	
 	public AbstractSupportRequest(int id, String title, int basePoints) {
 		// Checks for invariant violations
