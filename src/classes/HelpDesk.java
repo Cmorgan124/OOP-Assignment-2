@@ -7,5 +7,6 @@ import java.util.Map;
 
 
 public class HelpDesk {
-
+	private Map<Integer, SupportRequest> requestsById = new HashMap<>();
+    private Map<Technician, List<SupportRequest>> assignments = new HashMap<>();
 }
