@@ -26,4 +26,10 @@ public class HelpDesk {
         requestsById.put(request.getId(), request);
 
     }
+    
+  //finds a request by its ID, returns null if not found
+    public SupportRequest findRequest(int id)
+    {
+        return requestsById.get(id);
+    }
 }
