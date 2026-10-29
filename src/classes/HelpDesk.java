@@ -34,6 +34,7 @@ public class HelpDesk {
     }
     
   //assigns a request to a technician, throws exception if technician is null, request ID does not exist
+    // Design Choice: request cannot be reassigned to the same technician
     public void assignRequest(Technician technician, int requestId)
     {
         if(technician == null)
@@ -48,6 +49,16 @@ public class HelpDesk {
 
         List<SupportRequest> requests = assignments.get(technician);
 
+        for(SupportRequest request : requestsById.values())
+        {
+            if(request.getId() == requestId)
+            {
+                if(requests != null && requests.contains(request))
+                {
+                    throw new IllegalArgumentException("Request " + requestId + " is already assigned to Technician " + technician.getName() + ".");
+                }
+            }
+        }
 
         if(requests == null)
         {
