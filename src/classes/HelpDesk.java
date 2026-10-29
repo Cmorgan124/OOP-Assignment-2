@@ -95,4 +95,13 @@ public class HelpDesk {
         throw new IllegalArgumentException("Request " + requestId + " is not assigned to Technician " + technician.getName() + ".");
 
     }
+    
+  //prints all requests in the help desk
+    public void printAllRequests()
+    {
+        for(SupportRequest request : requestsById.values())
+        {
+            System.out.println(request);
+        }
+    }
 }
