@@ -68,4 +68,31 @@ public class HelpDesk {
 
         requests.add(requestsById.get(requestId));
     }
+    
+  //resolves a request for a technician, throws exception if technician is null, request ID does not exist, or request is not assigned to the technician
+    public int resolveRequest(Technician technician, int requestId)
+    {
+        if(technician == null)
+        {
+            throw new IllegalArgumentException("Must provide a valid technician.");
+        }
+
+        List<SupportRequest> requests = assignments.get(technician);
+
+        if(requests == null)
+        {
+            throw new IllegalArgumentException("Request " + requestId + " is not assigned to Technician " + technician.getName() + ".");
+        }
+
+        for(SupportRequest request : requests)
+        {
+            if(request.getId() == requestId)
+            {
+                return request.resolveFor(technician);
+            }
+        }
+
+        throw new IllegalArgumentException("Request " + requestId + " is not assigned to Technician " + technician.getName() + ".");
+
+    }
 }
