@@ -12,5 +12,16 @@ public class HelpDeskUtil {
             System.out.println(item);
         }
     }
+    
+  //sums the service points of a list of technicians, works for any subclass of Technician
+    public static int sumPoints(List<? extends Technician> technicians)
+    {
+        int totalPoints = 0;
+        for(Technician technician : technicians)
+        {
+            totalPoints += technician.getServicePoints();
+        }
+        return totalPoints;
+    }
 
 }
