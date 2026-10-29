@@ -104,4 +104,27 @@ public class HelpDesk {
             System.out.println(request);
         }
     }
+    
+  //prints all requests assigned to a technician, throws exception if technician is null
+    public void printAssignmentsFor(Technician technician)
+    {
+        if(technician == null)
+        {
+            throw new IllegalArgumentException("Must provide a valid technician.");
+        }
+
+        List<SupportRequest> requests = assignments.get(technician);
+
+        if(requests != null)
+        {
+            for(SupportRequest request : requests)
+            {
+                System.out.println(request);
+            }
+        }
+        else
+        {
+            System.out.println("No requests assigned to Technician " + technician.getName() + ".");
+        }
+    }
 }
