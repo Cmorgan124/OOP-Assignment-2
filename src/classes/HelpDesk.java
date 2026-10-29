@@ -32,4 +32,29 @@ public class HelpDesk {
     {
         return requestsById.get(id);
     }
+    
+  //assigns a request to a technician, throws exception if technician is null, request ID does not exist
+    public void assignRequest(Technician technician, int requestId)
+    {
+        if(technician == null)
+        {
+            throw new IllegalArgumentException("Must provide a valid technician.");
+        }
+
+        if(requestsById.containsKey(requestId) == false)
+        {
+            throw new IllegalArgumentException("Request " + requestId + " does not exist.");
+        }
+
+        List<SupportRequest> requests = assignments.get(technician);
+
+
+        if(requests == null)
+        {
+            requests = new ArrayList<>();
+            assignments.put(technician, requests);
+        }
+
+        requests.add(requestsById.get(requestId));
+    }
 }
