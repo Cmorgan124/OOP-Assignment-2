@@ -1,10 +1,7 @@
 package classes;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
 
-=======
->>>>>>> 5b723f3 (Adds readme into assignment folder)
 import classes.request.*;
 
 public class Main {
